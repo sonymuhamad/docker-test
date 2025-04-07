@@ -1,0 +1,6 @@
+express-app/node_modules/
+
+# Ignore OS and editor junk
+.DS_Store
+.vscode/
+.idea/
