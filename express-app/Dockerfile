@@ -1,13 +1,18 @@
-FROM node:22-alpine
+FROM node:22-alpine AS build
 
 WORKDIR /app
-
 COPY package*.json .
-
 RUN npm ci
 
-COPY index.js index.js
+COPY src src
+COPY tsconfig.json tsconfig.json
+RUN npm run build
 
-EXPOSE 3000
+FROM gcr.io/distroless/nodejs22
 
-CMD [ "node","index.js" ]
+WORKDIR /app
+COPY --from=build /app/dist dist
+COPY --from=build /app/node_modules node_modules
+ENV PORT=3000
+
+CMD [ "dist/index.js" ]
