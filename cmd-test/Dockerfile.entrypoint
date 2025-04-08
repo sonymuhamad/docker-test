@@ -1,0 +1,4 @@
+FROM alpine:3.20
+
+# everything that comes after the docker run command is appended 
+ENTRYPOINT [ "echo", "Hello from cmd test from dockerfile.cmd" ]
