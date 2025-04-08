@@ -1,4 +1,6 @@
 express-app/node_modules/
+**/node_modules**
+**/dist**
 
 # Ignore OS and editor junk
 .DS_Store
