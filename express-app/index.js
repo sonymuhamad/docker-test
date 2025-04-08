@@ -3,7 +3,6 @@ const bodyParser = require("body-parser")
 const http = require('http');
 
 const app = express()
-const port = 3000
 
 const users = [
     {
@@ -36,7 +35,7 @@ app.get("/users",(req,res)=>{
 // Create server
 const server = http.createServer(app);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT;
 
 server.listen(PORT, () => {
   console.log(`Running Express server on port ${PORT}`);
