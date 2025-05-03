@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: test-config-map
+data:
+  PORT: "8080"
+  SERVICE_NAME: test-config-map-app

@@ -19,5 +19,8 @@ spec:
           image: nginx:1.27.0
           ports:
             - containerPort: 80
+          envFrom:
+            - configMapRef:
+                name: test-config-map
   strategy:
     type: RollingUpdate
